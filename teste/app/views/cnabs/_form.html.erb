@@ -1,0 +1,81 @@
+<%= form_with(model: cnab, local: true) do |form| %>
+  <div class="form-group">
+    <% if cnab.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(cnab.errors.count, "Erro") %>:</h5>
+        <ul>
+          <% cnab.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :tipo, class: 'input-group-text' %>
+      </div>      
+      <%
+=begin%>
+ <%= form.number_field :tipo, class: 'form-control' %>       
+<%
+=end%>
+      <%= form.select :tipo, @cnab.tipoList, class: 'form-control' %>      
+      
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :data, class: 'input-group-text' %>
+      </div>
+      <%= form.date_select :data, class: 'form-control', order: [:day, :month, :year] %>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :valor, class: 'input-group-text' %>
+      </div>
+      <%= form.text_field :valor, class: 'form-control' %>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :cpf, class: 'input-group-text' %>
+      </div>
+      <%= form.text_field :cpf, class: 'form-control' %>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :cartao, class: 'input-group-text' %>
+      </div>
+      <%= form.text_field :cartao, class: 'form-control' %>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :hora, class: 'input-group-text' %>
+      </div>
+      <%= form.text_field :horaView, class: 'form-control', :disabled => true %>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :dono, class: 'input-group-text' %>
+      </div>
+      <%= form.text_field :dono, class: 'form-control' %>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <%= form.label :loja, class: 'input-group-text' %>
+      </div>
+      <%= form.text_field :loja, class: 'form-control' %>
+    </div>
+
+    <div class="input-group">      
+      <%= form.submit 'Salvar', class: 'btn btn-primary' %>
+    </div>
+  </div>
+ <% end %>

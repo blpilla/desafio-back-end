@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="table-responsive container-fluid">
+<h1>Importações por loja</h1>
+<br>
+<%= link_to 'Importar arquivo Cnab', new_cnab_path, class: 'btn btn-primary' %>
+<br><br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Loja</th>
+        <th scope="col">Operações</th>
+        <th scope="col">Total</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cnabs.each do |cnab| %>
+        <tr>
+          <td style="font-weight:bold"><%= cnab.loja %></td>
+          <td><%= cnab.operacoes %></td>
+          <td><%= cnab.total %></td>
+          <td><%= link_to 'Listar', cnab, method: :store, data: { id: cnab.id } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+Desafio Back-end<br> <a href="https://github.com/Pagnet/desafio-back-end" target="_new">https://github.com/Pagnet/desafio-back-end</a>
+</div>
+
+

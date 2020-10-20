@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @cnab.tipoView %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @cnab.dataViewPt %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @cnab.valor %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @cnab.cpf %>
+</p>
+
+<p>
+  <strong>Cartão:</strong>
+  <%= @cnab.cartao %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @cnab.horaView %>
+</p>
+
+<p>
+  <strong>Dono:</strong>
+  <%= @cnab.dono %>
+</p>
+
+<p>
+  <strong>Loja:</strong>
+  <%= @cnab.loja %>
+</p>
+
+<%= link_to 'Editar', edit_cnab_path(@cnab) %> |
+<%= link_to 'Voltar', cnabs_path %>

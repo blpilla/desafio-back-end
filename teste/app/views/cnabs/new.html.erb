@@ -1,0 +1,10 @@
+<h1>Importar Cnab</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= form_tag '/cnabs', multipart: true do %>
+  <label for="file">Arquivo Cnab</label> <%= file_field_tag "file" %>
+  <div><%= submit_tag 'Enviar' %></div>
+<% end %>
+
+<%= link_to 'Voltar', cnabs_path %>
